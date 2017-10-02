@@ -1,0 +1,37 @@
+html {
+	min-height: 100vh;
+	width: 100vw;
+	background: black;
+}
+
+#switch-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 48px;
+}
+
+#state {
+	text-align: center;
+	color: white;
+}
+
+#switch {
+	background-color: red;
+	width: 300px;
+	height: 100px;
+	border-radius: 50px;
+}
+
+#button {
+	height: 100%;
+	width: 100px;
+	background: green;
+	transition: transform 400ms ease-in-out;
+	border-radius: 50px;
+}
+
+.on {
+	transform: translateX(200px);
+}
