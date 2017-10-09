@@ -11,6 +11,7 @@ function setCorrectGuess() {
 
     correctGuess = document.getElementById("guess").value;
     document.getElementById("playerText").textContent = "Player Two Enter a Guess";
+	 clearGuess();
     document.getElementById("resultsText").textContent = "";
   } else if (document.getElementById("playerText").textContent == "Player Two Enter a Guess") {
     if (currentGuess > correctGuess) {
