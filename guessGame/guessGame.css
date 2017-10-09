@@ -1,0 +1,7 @@
+p{
+  text-align: center; 
+}
+input,span{
+	display:table;
+margin:0 auto;
+}
