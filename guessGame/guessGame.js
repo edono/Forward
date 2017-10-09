@@ -16,17 +16,17 @@ function setCorrectGuess() {
     if (currentGuess > correctGuess) {
       document.getElementById("resultsText").textContent = "Your guess is too high";
       totalGuesses++;
-      clearGuess()
+      clearGuess();
     } else if (currentGuess < correctGuess) {
       document.getElementById("resultsText").textContent = "Your guess is too low";
       totalGuesses++;
-      clearGuess()
+      clearGuess();
     } else if (currentGuess == correctGuess) {
       ++totalGuesses;
       document.getElementById("resultsText").textContent = "Click on Enter to play again";
       document.getElementById("playerText").textContent = "Your guess is correct it took you " + totalGuesses + " guesses";
       totalGuesses = -1;
-      clearGuess()
+      clearGuess();
     }
   }
 }
