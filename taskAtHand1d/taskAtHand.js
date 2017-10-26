@@ -24,6 +24,13 @@ function TaskAtHandApp()
 		.focus();
 		$("#app header").append(version);
 		loadTaskList();
+		
+		$("button.undo").click(function(){
+			appStorage.setValue("taskList", appStorage.getValue("backup"));
+			$("#task-list").empty();
+			loadTaskList();
+		});
+		
 		setStatus("ready");
 	};
 	function addTask()
@@ -43,15 +50,6 @@ function TaskAtHandApp()
 		
 		$("#task-list").append($task);
 		
-		$("button.delete", $task).click(function(){
-			$task.remove();
-		});
-		$("button.move-up", $task).click(function() {
-			$task.insertBefore($task.prev());
-		});
-		$("button.move-down", $task).click(function() {
-			$task.insertAfter($task.next());
-		});
 		$("span.task-name", $task).click(function() {
 			onEditTaskName($(this));
 		});
@@ -84,12 +82,14 @@ function TaskAtHandApp()
 		if (moveUp)
 		{
 			$task.insertBefore($task.prev());
+			saveTaskList();
 		}
 		else
 		{
 			$task.insertAfter($task.next());
+			saveTaskList();
 		}
-		saveTaskList();
+		
 	}
 	function onEditTaskName($span)
 	{
@@ -115,6 +115,7 @@ function TaskAtHandApp()
 		$("#task-list .task span.task-name").each(function(){
 			tasks.push($(this).text())
 		});
+		appStorage.setValue("backup", appStorage.getValue("taskList"));
 		appStorage.setValue("taskList", tasks);
 	}
 	function loadTaskList()
@@ -127,6 +128,7 @@ function TaskAtHandApp()
 				addTaskElement(tasks[i]);
 			}
 		}
+		saveTaskList();
 	}
 	
 } // end MyApp
