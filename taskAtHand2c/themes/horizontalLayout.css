@@ -1,0 +1,32 @@
+#task-list .task
+{
+	position: relative;
+	left: 160px;
+	list-style: none;
+	padding: 0.25em;
+	margin: 0.25em;
+	background-color: beige;
+	border-radius: 4px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: akk 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+#add-task
+{
+	direction: rtl;
+}
+#new-task-name
+{
+	position: relative;
+	left: 160px;
+	top: height.(#task-list) / 2;
+	font-size: 1em;
+	display: block;
+	width: 98%;
+	
+}
+.input{
+direction:ltr;	
+}
