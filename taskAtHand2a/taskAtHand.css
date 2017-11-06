@@ -54,7 +54,7 @@ button {
 	border-radius: 4px;
 	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 	-webkit-transition: all 0.25s ease;
-	-moz-transition: akk 0.25s ease;
+	-moz-transition: all 0.25s ease;
 	-o-transition: all 0.25s ease;
 	transition: all 0.25s ease;
 }
@@ -68,7 +68,7 @@ button {
 	opacity: 0;
 	
 	-webkit-transition: all 0.25s ease;
-	-moz-transition: akk 0.25s ease;
+	-moz-transition: all 0.25s ease;
 	-o-transition: all 0.25s ease;
 	transition: all 0.25s ease;
 	
