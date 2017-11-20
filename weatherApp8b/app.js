@@ -20,6 +20,11 @@ function MyApp()
 		 $('#getWeather').click(function() {
 			 weatherWidge.update();
 			 });
+		 
+		 $('#checkWeather').click(function() {
+			 alert("It was clicked");
+			 weatherWidge.getLocation();
+			 });
 		$("#app>header").append(version);
 		setStatus("ready");
 	}
