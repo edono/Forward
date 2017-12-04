@@ -7,26 +7,19 @@ $(document).ready(function() {
 		})
 			.done(function(data) {
 				questionResults(data);})
-				
 			.fail(function(){$("#error").text("Failed to load question");});
 		
 	}
-	$('#triv1').click(function() {
-			 getQuestion();
-			calculateResults(expertChosen, wager);
-			 });
-			 
 	function questionResults(data)
 	{
 	var questionData = data;
 	var question = questionData[0].question;
 	var answer = questionData[0].answer;
 	var category = questionData[0].category.title;
-	$("#question").text("Question : " + question);
-	$("#category").text("Category : " + category);
-	$("#answer").text("Answer : " + answer);
-	}	
-	
+	$("#question").html("<b>Question : " + question);
+	$("#category").html("<b>Category : " + category);
+	$("#answer").html("<b>Answer : " + answer);
+	}
 	$("#choosepat").click(function() 
 	{
 		expert = "Patrick Star ";
