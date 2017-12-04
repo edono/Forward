@@ -1,0 +1,101 @@
+#controls {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/* #question {
+	position: absolute;
+	top: 40%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+}
+#answer {
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	transform: translate(-50%, -50%);
+}
+#category {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+} */
+#patstar{
+	position: absolute;
+	top: 80%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+#joe{
+	position: absolute;
+	top: 80%;
+	right: 30%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+#hawking{
+	position: absolute;
+	top: 80%;
+	right: 5%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+#choosepat{
+	position: absolute;
+	top: 60%;
+	right: 58%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+#choosejoe{
+	position: absolute;
+	top: 60%;
+	right: 38%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+#choosehawking{
+	position: absolute;
+	top: 60%;
+	right: 13%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+#betting {
+	position: absolute;
+	top: 40%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+}
+#welcome {
+	text-align: center;
+    font-size: 300%;
+}
+img.triv{
+	background: url(images/trivia.gif);
+    transform: rotate(-15deg);
+	top: 5%;
+	left: 20%;
+}
+img.bosspic{
+	background: url(images/boss.gif);
+	transform: rotate(15deg);
+	top: 5%;
+	right: 20%;
+}
+#hiretext {
+	text-align: center;
+}
+footer{
+	width: 1000px;
+	margin: auto;
+}
+
+
+
+
+
