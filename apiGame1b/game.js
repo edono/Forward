@@ -7,37 +7,41 @@ $(document).ready(function() {
 		})
 			.done(function(data) {
 				questionResults(data);})
+				
 			.fail(function(){$("#error").text("Failed to load question");});
 		
 	}
+	$('#triv1').click(function() {
+			 getQuestion();
+			calculateResults(expertChosen, wager);
+			 });
+			 
 	function questionResults(data)
 	{
 	var questionData = data;
 	var question = questionData[0].question;
 	var answer = questionData[0].answer;
 	var category = questionData[0].category.title;
-	$("#question").html("<b>Question : " + question);
-	$("#category").html("<b>Category : " + category);
-	$("#answer").html("<b>Answer : " + answer);
-	}
+	$("#question").text("Question : " + question);
+	$("#category").text("Category : " + category);
+	$("#answer").text("Answer : " + answer);
+	}	
+	
 	$("#choosepat").click(function() 
 	{
 		expert = "Patrick Star ";
-			 getExpert(expert);
 			 
 	});
 	
 	$("#choosejoe").click(function() 
 	{
 		expert = "Average Joe ";
-			 getExpert(expert);
 			 
 	});
 	
 	$("#choosehawking").click(function() 
 	{
 		expert = "Stephen Hawking ";
-			 getExpert(expert);
 			 
 	});
 	 $("#enterBet").click(function() 
@@ -56,21 +60,24 @@ $(document).ready(function() {
 		{
 		$("#choice").html("Please select someone to answer your trivia question before placing a wager");
 		}
-		else
+		else if (!confirmReady)
 		$("#choice").html("Sorry you aren't ready to confirm yet, please place a valid wager");
 	});
 	var balance = 1000;
 	var expert = "notSet";
 		$("#balance").text("Current balance: $" + balance);
-	function getExpert(expert)
-	{	
-		var wager = Math.round($("#wager").val()* 100) / 100;
-		var confirmReady = false;
-		var expertChosen = expert;
-		$("#choice").html("This question will be answered by " + expertChosen + "<br/>" + "Please enter a wager for this round");
 		
+		
+		var wager;
+		var confirmReady = false;
+		var expertChosen;
 		$("#enterBet").click(function() 
 		{
+			wager = Math.round($("#wager").val()* 100) / 100;
+			confirmReady = false;
+			expertChosen = expert;
+			$("#choice").html("This question will be answered by " + expertChosen + "<br/>" + "Please enter a wager for this round");
+			
 			confirmReady = false;
 			wager = Math.round($("#wager").val()* 100) / 100;
 			if (balance >= wager && wager > 0)
@@ -91,6 +98,7 @@ $(document).ready(function() {
 				$("#choice").html("Please place a wager that is larger than $0");
 			}					 
 			});
+			
 			$("#confirmBet").click(function() 
 		{
 			if (confirmReady == false)
@@ -170,8 +178,7 @@ $(document).ready(function() {
 				}
 			}
 			confirmReady = false;
-		})
-	}
+		});
 	
 	$("#doneButton").click(function() 
 	{
@@ -187,4 +194,3 @@ $(document).ready(function() {
 });
 		
 	
-
